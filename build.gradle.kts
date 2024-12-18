@@ -1,16 +1,37 @@
-plugins {
-    kotlin("multiplatform") version "2.0.20"
-    kotlin("plugin.compose") version "2.0.20"
-    id("org.jetbrains.compose") version "1.6.11"
-    id("net.kodein.cup") version "1.0.0-Beta-09"
+import org.jetbrains.compose.reload.ComposeHotRun
+import org.jetbrains.kotlin.compose.compiler.gradle.ComposeFeatureFlag
+
+repositories {
+    maven("https://packages.jetbrains.team/maven/p/firework/dev")
 }
 
+plugins {
+    kotlin("multiplatform")
+    kotlin("plugin.compose")
+    id("org.jetbrains.compose")
+    id("org.jetbrains.compose-hot-reload")
+    id("net.kodein.cup") version "1.0.0-Beta-09"
+}
+java{
+    toolchain {
+        vendor.set(JvmVendorSpec.JETBRAINS)
+        version=JavaLanguageVersion.of(21)
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
 cup {
     targetDesktop()
 
     // TODO: If you comment this (you don't want to export your presentation as a web page),
     //  you must remove the .github/workflows/pages.yml file as well.
     targetWeb()
+}
+composeCompiler {
+    featureFlags.add(ComposeFeatureFlag.OptimizeNonSkippingGroups)
+}
+
+tasks.register<ComposeHotRun>("runHot") {
+    mainClass.set("MainKt")
 }
 
 kotlin {

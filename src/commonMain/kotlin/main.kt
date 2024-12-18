@@ -9,9 +9,9 @@ import net.kodein.cup.cupApplication
 import net.kodein.cup.laser.laser
 import net.kodein.cup.speaker.speakerWindow
 import net.kodein.cup.widgets.material3.cupScaleDown
+import org.jetbrains.compose.reload.DevelopmentEntryPoint
 import org.kodein.emoji.compose.EmojiService
-import slides.intro
-import slides.todo
+import slides.*
 
 
 fun main() = cupApplication(
@@ -44,10 +44,13 @@ fun main() = cupApplication(
             }
         }
     }
+
 }
 
 // TODO: Write your own slides!
 val presentationSlides = Slides(
+    preIntro,
     intro,
-    todo
+    whatIsCuP,
+    amazingHtml
 )
