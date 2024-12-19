@@ -57,9 +57,10 @@ kotlin {
 
 //            implementation("org.kodein.emoji:emoji-compose-m2:2.1.0")
             implementation("org.kodein.emoji:emoji-compose-m3:2.0.1")
-
-            implementation("io.sellmair:evas:1.1.0")
-            implementation("io.sellmair:evas-compose:1.1.0")
+            /*
+            *             implementation("io.sellmair:evas:1.1.0")
+                    implementation("io.sellmair:evas-compose:1.1.0")
+            * */
         }
     }
 }

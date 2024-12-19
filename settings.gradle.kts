@@ -3,7 +3,7 @@ rootProject.name = "cup-lt"
 
 pluginManagement {
     plugins {
-        id("org.jetbrains.compose-hot-reload") version "1.0.0-dev.31.8"
+        id("org.jetbrains.compose-hot-reload") version "1.0.0-dev.32.1"
     }
 
     repositories {
@@ -14,8 +14,8 @@ pluginManagement {
 
     plugins {
 
-        kotlin("multiplatform") version "2.1.0-firework.31"
-        kotlin("plugin.compose") version "2.1.0-firework.31"
+        kotlin("multiplatform") version "2.1.0-firework.32"
+        kotlin("plugin.compose") version "2.1.0-firework.32"
         id("org.jetbrains.compose") version "1.7.1"
     }
 }

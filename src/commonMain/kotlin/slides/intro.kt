@@ -27,7 +27,7 @@ import org.kodein.emoji.smileys_emotion.face_smiling.Wink
 
 val preIntro by Slide(stepCount = 6) { step ->
     Text(
-        "皆さん、スライドは何で作ってますか？"
+        "皆さん、スライドは何で作っていますか？"
     )
     BulletPoints(Modifier.padding(top = 16.dp)) {
         BulletPoint(visible = step >= 1) {
